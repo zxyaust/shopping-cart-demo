@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0ff"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="这是底层,listview等写在这一层" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.daimajia.swipe.SwipeLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:drag_edge="bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff0"
+                android:orientation="vertical">
+                <!--这是swipelayout的地下一层,购物车里面的列表写在这一层-->
+                <!--就是弹出框里面的内容-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 白酒       x3       总价:1080元\n 红酒       x2       总价:80元 白酒       x3       总价:1080元\n 红酒       x2       总价:80元 白酒       x3       总价:1080元\n 红酒       x2       总价:80元 白酒       x3       总价:1080元\n 红酒       x2       总价:80元 白酒       x3       总价:1080元\n 红酒       x2       总价:80元" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--这是swipelayout的上面一层,swipelayout是继承自fragmentlayout的,所以会盖住下面的层-->
+            </LinearLayout>
+
+
+        </com.daimajia.swipe.SwipeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:visibility="invisible" />
+        <!--这个view也是为了支撑作用-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+        <!--这里是底部条的内容,自己修改-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#999"
+            android:gravity="center_vertical"
+            android:text="          总金额:100元   去结算"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="15dp"
+        android:background="#0000"
+        android:src="@mipmap/ic_launcher" />
+    <!--这个image就是跟随滑动的,他是根据弹出的框的高度而高度发生改变的-->
+</FrameLayout>
