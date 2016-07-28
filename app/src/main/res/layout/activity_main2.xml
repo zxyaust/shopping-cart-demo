@@ -11,6 +11,13 @@
         android:layout_height="match_parent"
         android:text="这是底层,listview等写在这一层" />
 
+    <Button
+        android:layout_marginTop="90dp"
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用属性动画实现" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
