@@ -18,11 +18,13 @@ public class Main2Activity extends AppCompatActivity {
     private com.daimajia.swipe.SwipeLayout swipe;
     boolean isOpen = false;//是否展开
     private android.widget.Button bt1;
+    private Button bt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        this.bt2 = (Button) findViewById(R.id.bt2);
         this.bt1 = (Button) findViewById(R.id.bt1);
         this.swipe = (SwipeLayout) findViewById(R.id.swipe);
         swipe.setSwipeEnabled(false);//不允许边缘拉出
@@ -63,6 +65,12 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
             }
         });
     }
